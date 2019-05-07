@@ -8,9 +8,11 @@ namespace SequentialCollection
         static void Main(string[] args)
         {
             myMethods methods = new myMethods();
+            System.Console.WriteLine("QUEUE:---------------------\n");
             methods.WorkingWithQueue();
-
-
+            System.Console.WriteLine("STACK:---------------------\n");
+            methods.WorkingWithStack();
+            System.Console.ReadLine();
         }
     }
 }
@@ -37,7 +39,27 @@ namespace CollectionExcercises
 
                 testQueue.Dequeue();
             }
-            System.Console.ReadLine();
+        }
+
+        public void WorkingWithStack()
+        {
+            Stack stack = new Stack();
+
+            stack.Push("First");
+            stack.Push("Second");
+            stack.Push("Third");
+            stack.Push("Fourth");
+
+            while (stack.Count != 0)
+            {
+                System.Console.WriteLine("\n");
+                foreach (string item in stack)
+                {
+                    System.Console.WriteLine($"Current item is: {item}");
+                }
+
+                stack.Pop();
+            }
         }
     }
 }
