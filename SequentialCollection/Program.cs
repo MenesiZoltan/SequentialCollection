@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Specialized;
+using System.Globalization;
 using CollectionExcercises;
 
 namespace SequentialCollection
@@ -7,6 +9,11 @@ namespace SequentialCollection
     {
         static void Main(string[] args)
         {
+            RunExcercises();
+        }
+
+        public static void RunExcercises()
+        {
             myMethods methods = new myMethods();
             System.Console.WriteLine("QUEUE:---------------------\n");
             methods.WorkingWithQueue();
@@ -14,6 +21,8 @@ namespace SequentialCollection
             methods.WorkingWithStack();
             System.Console.WriteLine("HASHTABLE:---------------------\n");
             methods.WorkingWithHashtable("1, 2, 3, 4");
+            System.Console.WriteLine("LISTCOLLECTION:---------------------\n");
+            methods.WorkingWithListCollection();
             System.Console.ReadLine();
         }
     }
@@ -86,6 +95,20 @@ namespace CollectionExcercises
                     System.Console.WriteLine($"This is in the has table! Key is {temp} and value is {table[temp]}!");
                 }
             }
+        }
+
+        public void WorkingWithListCollection()
+        {
+            ListDictionary myCollection = new ListDictionary();
+            myCollection.Add("Estados Unidos", "United States");
+            myCollection.Add("Canadá", "Canada");
+            myCollection.Add("España", "Spain");
+
+            if (myCollection.Contains("Estados Unidos"))
+                System.Console.WriteLine($"The collection contains the key Estados Unidos. Value is {myCollection["Estados Unidos"]}");
+            else
+                System.Console.WriteLine("The collection does not contain the key \"Kiwis\".");
+            System.Console.WriteLine();
         }
     }
 }
